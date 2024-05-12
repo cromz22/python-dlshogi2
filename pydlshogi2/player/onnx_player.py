@@ -4,6 +4,7 @@ import numpy as np
 from pydlshogi2.player.mcts_player import MCTSPlayer
 from cshogi.dlshogi import make_input_features, make_move_label, FEATURES1_NUM, FEATURES2_NUM
 
+
 class OnnxPlayer(MCTSPlayer):
     # USIエンジンの名前
     name = 'python-dlshogi-onnx'
@@ -40,6 +41,7 @@ class OnnxPlayer(MCTSPlayer):
     # 着手を表すラベル作成
     def make_move_label(self, move, color):
         return make_move_label(move, color)
+
 
 if __name__ == '__main__':
     player = OnnxPlayer()

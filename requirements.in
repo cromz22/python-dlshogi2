@@ -1,0 +1,5 @@
+cshogi @ git+https://github.com/TadaoYamaoka/cshogi.git
+torch
+numpy
+scikit-learn
+onnxruntime

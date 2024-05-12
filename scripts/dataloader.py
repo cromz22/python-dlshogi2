@@ -15,9 +15,13 @@ class HcpeDataLoader:
         self.device = device
         self.shuffle = shuffle
 
-        self.torch_features = torch.empty((batch_size, FEATURES_NUM, 9, 9), dtype=torch.float32, pin_memory=True)
-        self.torch_move_label = torch.empty((batch_size), dtype=torch.int64, pin_memory=True)
-        self.torch_result = torch.empty((batch_size, 1), dtype=torch.float32, pin_memory=True)
+        # self.torch_features = torch.empty((batch_size, FEATURES_NUM, 9, 9), dtype=torch.float32, pin_memory=True)
+        # self.torch_move_label = torch.empty((batch_size), dtype=torch.int64, pin_memory=True)
+        # self.torch_result = torch.empty((batch_size, 1), dtype=torch.float32, pin_memory=True)
+        # pin_memory does not work without cuda
+        self.torch_features = torch.empty((batch_size, FEATURES_NUM, 9, 9), dtype=torch.float32, pin_memory=False)
+        self.torch_move_label = torch.empty((batch_size), dtype=torch.int64, pin_memory=False)
+        self.torch_result = torch.empty((batch_size, 1), dtype=torch.float32, pin_memory=False)
 
         self.features = self.torch_features.numpy()
         self.move_label = self.torch_move_label.numpy()

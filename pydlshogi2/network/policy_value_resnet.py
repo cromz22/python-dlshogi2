@@ -4,6 +4,7 @@ import torch.nn.functional as F
 
 from pydlshogi2.features import FEATURES_NUM, MOVE_PLANES_NUM, MOVE_LABELS_NUM
 
+
 class Bias(nn.Module):
     def __init__(self, shape):
         super(Bias, self).__init__()
@@ -11,6 +12,7 @@ class Bias(nn.Module):
 
     def forward(self, input):
         return input + self.bias
+
 
 class ResNetBlock(nn.Module):
     def __init__(self, channels):
@@ -29,6 +31,7 @@ class ResNetBlock(nn.Module):
         out = self.bn2(out)
 
         return F.relu(out + x)
+
 
 class PolicyValueNetwork(nn.Module):
     def __init__(self, blocks=10, channels=192, fcl=256):
