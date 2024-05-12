@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--train-data', type=str, required=True, nargs='+', help='Path to training data file in hcpe format')
     parser.add_argument('--test-data', type=str, required=True, help='Path test data file in hcpe format')
     parser.add_argument('--gpu', '-g', type=int, default=0, help='GPU ID')
-    parser.add_argument('--epoch', '-e', type=int, default=1, help='Number of epoch times')
+    parser.add_argument('--epoch', '-e', type=int, default=1, help='Number of epochs')
     parser.add_argument('--batchsize', '-b', type=int, default=1024, help='Number of positions in each mini-batch')
     parser.add_argument('--testbatchsize', type=int, default=1024, help='Number of positions in each test mini-batch')
     parser.add_argument('--lr', type=float, default=0.01, help='learning rate')
